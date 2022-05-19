@@ -1,0 +1,31 @@
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.exe
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.deps.json
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.runtimeconfig.json
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.pdb
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Form1.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.AssemblyInfo.cs
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\refint\Election MS.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.pdb
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.genruntimeconfig.cache
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\ref\Election MS.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Properties.Resources.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Login.resources
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Admin.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election MS.csproj.CopyComplete
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.RegCan.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.RegVo.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.manfoot.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.deactivate.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.AAdmin.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Adminreg.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Electionsched.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Exit.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Voter.resources

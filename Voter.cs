@@ -21,5 +21,10 @@ namespace Election_MS
         {
 
         }
+
+        private void Voter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -133,6 +133,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Voter";
             this.Size = new System.Drawing.Size(1280, 720);
+            this.Load += new System.EventHandler(this.Voter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -38,6 +38,7 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // textBox1
@@ -152,6 +153,7 @@
             this.textBox7.Size = new System.Drawing.Size(284, 76);
             this.textBox7.TabIndex = 12;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // iconButton1
             // 
@@ -165,6 +167,7 @@
             this.iconButton1.Size = new System.Drawing.Size(100, 76);
             this.iconButton1.TabIndex = 13;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton2
             // 
@@ -233,5 +236,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private TextBox textBox5;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }

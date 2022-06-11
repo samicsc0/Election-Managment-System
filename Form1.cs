@@ -7,13 +7,10 @@ namespace Election_MS
         public Form1()
         {
             InitializeComponent();
-            Admin admin = new Admin();
-            admin.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -23,8 +20,8 @@ namespace Election_MS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Login l1 = new Login();
-            l1.ShowDialog();
+            Login log = new Login();
+            log.Show();
         }
     }
 }

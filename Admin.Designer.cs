@@ -342,6 +342,8 @@
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Admin";
             this.Opacity = 0.98D;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "National Election Board Of Ethiopia | Admin";
             this.Load += new System.EventHandler(this.Admin_Load);

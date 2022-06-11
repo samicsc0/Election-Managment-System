@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Election_MS
 {
     public partial class Admin : Form
     {
-        public Admin()
+        public Admin(String govid)
         {
             InitializeComponent();
         }
@@ -135,6 +136,9 @@ namespace Election_MS
             iconButton8.Hide();
             iconButton6.Hide();
             exit1.Hide();
+            deactivate1.Hide();
+            adminreg1.Hide();
+            aAdmin1.Hide();
         }
 
         private void iconButton5_Click(object sender, EventArgs e)

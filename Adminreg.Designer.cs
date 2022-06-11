@@ -103,6 +103,7 @@
             this.iconButton2.Size = new System.Drawing.Size(131, 67);
             this.iconButton2.TabIndex = 19;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // Adminreg
             // 

@@ -13,29 +13,35 @@ namespace Election_MS
     internal class userClass
     {
         public String govid { get; set; }
+        public String fname { get; set; }
+        public string lname { get; set; }
         public String username { get; set; }
         public String psswd { get; set; }
         public int acctype  { get; set;}
+        public string region { get; set; }
 
         static string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
         
         /*      Login       */
-        public int login(userClass u) {
+        public userClass login(userClass u) {
             SqlConnection conn = new SqlConnection(constring);
             try
             {
+                userClass v = new userClass();
                 SqlCommand cmd = new SqlCommand("exec chklogin @govid = '"+u.govid+"',@psswd = '"+u.psswd+"'", conn);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    return (int)reader[3];
+                    v.govid = (string)reader[1];
+                    v.acctype = (int)reader[3];
+                    return v;
                 }
                 else
-                    return -1;
+                    return null;
             }catch (Exception ex)
             {
-                return 0;
+                return null;
             }
             finally { conn.Close(); }
         }
@@ -195,6 +201,28 @@ namespace Election_MS
             }
             finally { conn.Close(); }
         }
+        public userClass infoup(string govid)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+          
+                userClass user = new userClass();
+                conn.Open();
+                    SqlCommand cmd = new SqlCommand("exec upview @gov_id = '" + govid + "'", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        user.fname = (string)reader[0];
+                        user.lname = (string)reader[1];
+                        user.govid = (string)reader[2];
+                        user.region = reader[3]+"";
+                        user.acctype = (int)reader[4];
+                        return user;
+                    }
+                    else
+                        return null;
+            
+            
+            }
         public int addAdmin(Adminclass ad)
         {
             SqlConnection conn = new SqlConnection(constring);

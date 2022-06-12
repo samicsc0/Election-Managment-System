@@ -34,7 +34,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
@@ -51,16 +50,18 @@
             this.iconButton1.Size = new System.Drawing.Size(75, 57);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(117, 29);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "TYPE ID HERE";
+            this.textBox1.PlaceholderText = "TYPE GOV\'ID HERE";
             this.textBox1.Size = new System.Drawing.Size(476, 57);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox4
             // 
@@ -68,7 +69,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.textBox4.Location = new System.Drawing.Point(438, 225);
+            this.textBox4.Location = new System.Drawing.Point(438, 256);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.PlaceholderText = "PASSWORD";
@@ -82,7 +83,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.textBox5.Location = new System.Drawing.Point(31, 225);
+            this.textBox5.Location = new System.Drawing.Point(31, 256);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.PlaceholderText = "GOV\'T ID";
@@ -96,7 +97,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.textBox3.Location = new System.Drawing.Point(438, 121);
+            this.textBox3.Location = new System.Drawing.Point(438, 152);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.PlaceholderText = "LAST NAME";
@@ -110,27 +111,13 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.textBox2.Location = new System.Drawing.Point(28, 121);
+            this.textBox2.Location = new System.Drawing.Point(28, 152);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.PlaceholderText = "FIRST NAME";
             this.textBox2.Size = new System.Drawing.Size(390, 76);
             this.textBox2.TabIndex = 9;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Administrator",
-            "Voter "});
-            this.comboBox2.Location = new System.Drawing.Point(438, 326);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(390, 33);
-            this.comboBox2.TabIndex = 20;
             // 
             // comboBox1
             // 
@@ -152,7 +139,7 @@
             "South West Ethiopia",
             "SNNP",
             "Tigray"});
-            this.comboBox1.Location = new System.Drawing.Point(31, 326);
+            this.comboBox1.Location = new System.Drawing.Point(31, 357);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(390, 33);
             this.comboBox1.TabIndex = 19;
@@ -164,11 +151,12 @@
             this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton2.Location = new System.Drawing.Point(379, 417);
+            this.iconButton2.Location = new System.Drawing.Point(363, 409);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(131, 67);
             this.iconButton2.TabIndex = 21;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // AAdmin
             // 
@@ -176,7 +164,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
@@ -199,7 +186,6 @@
         private TextBox textBox5;
         private TextBox textBox3;
         private TextBox textBox2;
-        private ComboBox comboBox2;
         private ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton iconButton2;
     }

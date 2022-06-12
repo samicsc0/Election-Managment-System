@@ -13,7 +13,7 @@ namespace Election_MS
         public String fname;
         public String lname;
         public String polp;
-        public String img;
+        public byte[] img;
         public String desc;
         public String region;
     }

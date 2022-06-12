@@ -23,5 +23,10 @@ namespace Election_MS
             Login log = new Login();
             log.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

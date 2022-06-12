@@ -56,9 +56,16 @@ namespace Election_MS
             candidate.lname = textBox3.Text;
             candidate.polp = textBox4.Text;
             candidate.elecid = textBox6.Text;
-            candidate.img = textBox7.Text;
             candidate.desc = textBox5.Text;
             candidate.region = comboBox1.GetItemText(comboBox1.SelectedItem);
+
+            byte[] img = null;
+            FileStream fs = new FileStream(textBox7.Text, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+            candidate.img = img;
+
+
             userClass u = new userClass();
             int check = u.regcan(candidate);
             if (check == 1)
@@ -79,12 +86,21 @@ namespace Election_MS
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Select image(*.Jpg; *.png; *.Gif)|*.Jpg; *.png; *.Gif";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                textBox7.Text = Image.FromFile(openFileDialog.FileName)+"";
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Select image(*.Jpg; *.png; *.Gif)|*.Jpg; *.png; *.Gif";
+                openFileDialog.Title = "Select Candidates Picture";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    textBox7.Text = openFileDialog.FileName.ToString();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+
+
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

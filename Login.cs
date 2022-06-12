@@ -36,15 +36,20 @@ namespace Election_MS
             textBox1.Clear();
             textBox2.Clear();
             userClass dbr = user.login(user);
-            if (dbr.acctype == 0)
+            if (dbr != null)
             {
-                Admin admin = new Admin(user.govid);
-                admin.ShowDialog();
-            }else if(dbr.acctype == 1)
-            {
-                Voterp voter = new Voterp();
-                voter.ShowDialog();
-            }else if(dbr == null)
+                if (dbr.acctype == 0)
+                {
+                    Admin admin = new Admin(dbr.govid);
+                    admin.ShowDialog();
+                }
+                else if (dbr.acctype == 1)
+                {
+                    Voterp voter = new Voterp(dbr.govid);
+                    voter.ShowDialog();
+                }
+            }
+            if(dbr == null)
             {
                 MessageBox.Show("Incorrect Gov't ID & Password","NEBE",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

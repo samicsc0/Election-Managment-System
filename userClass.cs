@@ -19,6 +19,8 @@ namespace Election_MS
         public String psswd { get; set; }
         public int acctype  { get; set;}
         public string region { get; set; }
+        public int vstat { get; set; }
+        public int elid { get; private set; }
 
         static string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
         
@@ -220,8 +222,6 @@ namespace Election_MS
                     }
                     else
                         return null;
-            
-            
             }
         public int addAdmin(Adminclass ad)
         {
@@ -238,6 +238,29 @@ namespace Election_MS
                 return -1;
             }
             finally { conn.Close(); }
+        }
+
+        /* info for the voter page */
+
+        public userClass votinfo(String govid)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+                userClass user = new userClass();
+                SqlCommand cmd = new SqlCommand("exec voda @gov_id = '" + govid + "'", conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.fname = (string)reader[2];
+                    user.lname = (string)reader[3];
+                    user.govid = (string)reader[1];
+                    user.region = (string)reader[4];
+                    user.vstat = (int)reader[5];
+                    user.elid = (int)reader[6];
+                    return user;
+                }
+                else
+                    return null;
         }
     }
 }

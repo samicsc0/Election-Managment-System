@@ -16,5 +16,6 @@ namespace Election_MS
         public byte[] img;
         public String desc;
         public String region;
+        public String imgloc;
     }
 }

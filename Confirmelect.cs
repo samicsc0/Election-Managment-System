@@ -23,6 +23,31 @@ namespace Election_MS
         {
             this.FormBorderStyle = FormBorderStyle.None;
             textBox6.Text = govid;
+            userClass u = new userClass();
+            vcon v = new vcon();
+            v = u.canloadcon(govid);
+            if (v != null)
+            {
+                textBox6.Text = v.full_name;
+                textBox1.Text = v.po_pa;
+                textBox2.Text = v.description;
+                MemoryStream ms = new MemoryStream(v.img);
+                try { 
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            try
+            {
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

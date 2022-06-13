@@ -97,7 +97,7 @@
             this.textBox1.Location = new System.Drawing.Point(387, 199);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "CANDIDATE ID";
+            this.textBox1.PlaceholderText = "POLITICAL PARTY";
             this.textBox1.Size = new System.Drawing.Size(391, 38);
             this.textBox1.TabIndex = 33;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -112,7 +112,7 @@
             this.textBox2.Location = new System.Drawing.Point(337, 276);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "CANDIDATE ID";
+            this.textBox2.PlaceholderText = "DESCRIPTION";
             this.textBox2.Size = new System.Drawing.Size(496, 142);
             this.textBox2.TabIndex = 32;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -127,7 +127,7 @@
             this.textBox6.Location = new System.Drawing.Point(387, 118);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.PlaceholderText = "CANDIDATE ID";
+            this.textBox6.PlaceholderText = "FULL NAME";
             this.textBox6.Size = new System.Drawing.Size(391, 38);
             this.textBox6.TabIndex = 31;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -137,6 +137,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(8, 118);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 

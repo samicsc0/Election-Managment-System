@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace Election_MS
 {
     public partial class RegCan : UserControl
     {
+        string imgLoc;
         public RegCan()
         {
             InitializeComponent();
@@ -50,8 +53,12 @@ namespace Election_MS
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
+            SqlConnection conn = new SqlConnection(constring);
             try
             {
+                
+                userClass u = new userClass();
                 Candidate candidate = new Candidate();
                 candidate.govid = textBox1.Text;
                 candidate.fname = textBox2.Text;
@@ -61,26 +68,27 @@ namespace Election_MS
                 candidate.desc = textBox5.Text;
                 candidate.region = comboBox1.GetItemText(comboBox1.SelectedItem);
 
-                byte[] img = null;
-                FileStream fs = new FileStream(textBox7.Text, FileMode.Open, FileAccess.Read);
+                byte[] photo = null;
+                FileStream fs = new FileStream(imgLoc,FileMode.Open,FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
-                img = br.ReadBytes((int)fs.Length);
-                candidate.img = img;
-
-
-                userClass u = new userClass();
-                int check = u.regcan(candidate);
-                if (check == 1)
+                photo = br.ReadBytes((int)fs.Length);
+                conn.Open();
+                string sql = "insert into candidate(gov_id,election_id,f_name,l_name,p_party,region,descr,photo)values('"+candidate.govid+"',"+candidate.elecid+",'"+candidate.fname+"','"+candidate.lname+"','"+candidate.polp+"','"+candidate.region+"','"+candidate.desc+"',@photo)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add(new SqlParameter("@photo",photo));
+                int n = cmd.ExecuteNonQuery();
+                conn.Close();
+                if (n == 1)
                 {
                     MessageBox.Show("Candidate Successfully Added!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (check == -1)
+                else if (n == 0)
                 {
                     MessageBox.Show("Faild to Register the Candidate, Please try again later!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Faild to Register the Candidate, Please try again later!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -92,16 +100,18 @@ namespace Election_MS
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Select image(*.Jpg; *.png; *.Gif)|*.Jpg; *.png; *.Gif";
-                openFileDialog.Title = "Select Candidates Picture";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|All Files (*.*)|*";
+                dlg.Title = "Select Candidate Photo";
+                if(dlg.ShowDialog() == DialogResult.OK)
                 {
-                    textBox7.Text = openFileDialog.FileName.ToString();
+                    imgLoc = dlg.FileName.ToString();
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

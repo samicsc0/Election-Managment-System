@@ -38,15 +38,23 @@ namespace Election_MS
             userClass dbr = user.login(user);
             if (dbr != null)
             {
-                if (dbr.acctype == 0)
+                if (dbr.stat != 0)
                 {
-                    Admin admin = new Admin(dbr.govid);
-                    admin.ShowDialog();
+                    if (dbr.acctype == 0)
+                    {
+                        Admin admin = new Admin(dbr.govid);
+                        admin.ShowDialog();
+                    }
+                    else if (dbr.acctype == 1)
+                    {
+                        Voterp voter = new Voterp(dbr.govid);
+                        voter.ShowDialog();
+                    }
                 }
-                else if (dbr.acctype == 1)
+                else
                 {
-                    Voterp voter = new Voterp(dbr.govid);
-                    voter.ShowDialog();
+                    MessageBox.Show("Your accout is deactivated. Please contact your Admin!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             if(dbr == null)

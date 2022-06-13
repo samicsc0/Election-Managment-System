@@ -21,6 +21,7 @@ namespace Election_MS
         public string region { get; set; }
         public int vstat { get; set; }
         public int elid { get; private set; }
+        public int stat { get; set; }
 
         static string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
         
@@ -37,6 +38,7 @@ namespace Election_MS
                 {
                     v.govid = (string)reader[1];
                     v.acctype = (int)reader[3];
+                    v.stat = (int)reader[4];
                     return v;
                 }
                 else
@@ -281,6 +283,25 @@ namespace Election_MS
             {
                 return false;
             }
+        }
+        public vcon canloadcon(String govid)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec final @govid = '"+govid+"'", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            vcon v = new vcon();
+            if (reader.Read())
+            {
+               string k = (string)reader[0] + " "+ (string)reader[1];
+                v.full_name = k.ToUpper();
+                v.po_pa = (string)reader[2];
+                v.description = (string)reader[3];
+                v.img = (byte[])(reader[4]);
+                return v;
+            }else
+                return null;
+            
         }
     }
 }

@@ -31,7 +31,6 @@ namespace Election_MS
 
         private void Voterp_Load(object sender, EventArgs e)
         {
-            confirm1.Hide();
             userClass u = new userClass();
             u = u.votinfo(g);
             iconButton3.Text = "Welcome, " + char.ToUpper(u.fname[0]) + u.fname.Substring(1)+"!";

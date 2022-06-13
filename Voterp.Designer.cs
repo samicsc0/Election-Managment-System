@@ -49,7 +49,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Crimson;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 64;
-            this.iconButton1.Location = new System.Drawing.Point(840, 557);
+            this.iconButton1.Location = new System.Drawing.Point(898, 553);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(328, 87);
             this.iconButton1.TabIndex = 23;
@@ -68,7 +68,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.LawnGreen;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 64;
-            this.iconButton2.Location = new System.Drawing.Point(840, 415);
+            this.iconButton2.Location = new System.Drawing.Point(898, 411);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(328, 87);
             this.iconButton2.TabIndex = 22;
@@ -84,7 +84,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.textBox6.Location = new System.Drawing.Point(840, 286);
+            this.textBox6.Location = new System.Drawing.Point(898, 282);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.PlaceholderText = "CANDIDATE ID";
@@ -95,12 +95,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 286);
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.Location = new System.Drawing.Point(40, 286);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(772, 358);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -132,7 +134,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 64;
-            this.iconButton3.Location = new System.Drawing.Point(840, 91);
+            this.iconButton3.Location = new System.Drawing.Point(898, 87);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(328, 62);
             this.iconButton3.TabIndex = 24;

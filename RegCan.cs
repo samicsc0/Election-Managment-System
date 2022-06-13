@@ -50,31 +50,37 @@ namespace Election_MS
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            Candidate candidate = new Candidate();
-            candidate.govid = textBox1.Text;
-            candidate.fname = textBox2.Text;
-            candidate.lname = textBox3.Text;
-            candidate.polp = textBox4.Text;
-            candidate.elecid = textBox6.Text;
-            candidate.desc = textBox5.Text;
-            candidate.region = comboBox1.GetItemText(comboBox1.SelectedItem);
-
-            byte[] img = null;
-            FileStream fs = new FileStream(textBox7.Text, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            img = br.ReadBytes((int)fs.Length);
-            candidate.img = img;
-
-
-            userClass u = new userClass();
-            int check = u.regcan(candidate);
-            if (check == 1)
+            try
             {
-                MessageBox.Show("Candidate Successfully Added!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (check == -1)
+                Candidate candidate = new Candidate();
+                candidate.govid = textBox1.Text;
+                candidate.fname = textBox2.Text;
+                candidate.lname = textBox3.Text;
+                candidate.polp = textBox4.Text;
+                candidate.elecid = textBox6.Text;
+                candidate.desc = textBox5.Text;
+                candidate.region = comboBox1.GetItemText(comboBox1.SelectedItem);
+
+                byte[] img = null;
+                FileStream fs = new FileStream(textBox7.Text, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                img = br.ReadBytes((int)fs.Length);
+                candidate.img = img;
+
+
+                userClass u = new userClass();
+                int check = u.regcan(candidate);
+                if (check == 1)
+                {
+                    MessageBox.Show("Candidate Successfully Added!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (check == -1)
+                {
+                    MessageBox.Show("Faild to Register the Candidate, Please try again later!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Faild to Register the Candidate, Please try again latter!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faild to Register the Candidate, Please try again later!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

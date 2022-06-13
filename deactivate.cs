@@ -75,5 +75,10 @@ namespace Election_MS
                 MessageBox.Show("Faild!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void deactivate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

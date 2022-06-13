@@ -4,6 +4,9 @@
     <Compile Update="Confirm.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Confirmelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="update.cs">
       <SubType>UserControl</SubType>
     </Compile>

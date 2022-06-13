@@ -148,9 +148,9 @@
             // confirm1
             // 
             this.confirm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.confirm1.Location = new System.Drawing.Point(84, 40);
+            this.confirm1.Location = new System.Drawing.Point(170, 55);
             this.confirm1.Name = "confirm1";
-            this.confirm1.Size = new System.Drawing.Size(1056, 585);
+            this.confirm1.Size = new System.Drawing.Size(882, 585);
             this.confirm1.TabIndex = 25;
             this.confirm1.Load += new System.EventHandler(this.confirm1_Load);
             // 

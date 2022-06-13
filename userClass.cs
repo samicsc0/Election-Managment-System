@@ -262,5 +262,25 @@ namespace Election_MS
                 else
                     return null;
         }
+        public bool vt(String govid)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec vcheck @govid = '" + govid + "'", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                if ((int)reader[0] == 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -149,6 +149,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "deactivate";
             this.Size = new System.Drawing.Size(872, 517);
+            this.Load += new System.EventHandler(this.deactivate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

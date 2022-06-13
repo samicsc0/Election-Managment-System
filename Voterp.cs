@@ -12,6 +12,7 @@ using System.Configuration;
 
 namespace Election_MS
 {
+
     public partial class Voterp : Form
     {
 
@@ -20,7 +21,6 @@ namespace Election_MS
         public Voterp(String govid)
         {
             InitializeComponent();
-            
             g = govid;
         }
 
@@ -57,9 +57,38 @@ namespace Election_MS
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            confirm1.Show();
-        }
+            SqlConnection conn = new SqlConnection(constring);
+            conn.Open();
+            userClass u = new userClass();
+            u = u.votinfo(g);
+            string canid = textBox6.Text;
+            SqlCommand cmd = new SqlCommand("exec voter_choice @region = '" + u.region + "',@elid = " + u.elid + "", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            bool x = false;
+                if (u.vt(g))
+                {
+                    while (dr.Read())
+                    {
+                        if (dr[0] == null)
+                            continue;
+                        else if ((String)dr[0] == canid)
+                        {
+                            Confirmelect ce = new Confirmelect(canid);
+                            x = true;
+                            ce.Show();
+                            break;
+                        }
+                    }
+                    if (x == false)
+                        MessageBox.Show("GovId doesn't exist in the list!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            else
+            {
+                MessageBox.Show("You can't vote more than one time!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+
+        }
         private void iconButton3_Click(object sender, EventArgs e)
         {
 
@@ -72,7 +101,7 @@ namespace Election_MS
 
         private void confirm1_Load(object sender, EventArgs e)
         {
-            
+             
         }
     }
 }

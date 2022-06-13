@@ -30,12 +30,13 @@ C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Electi
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Exit.resources
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Voter.resources
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Report.resources
-C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Voterp.resources
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\Election MS.dll.config
-C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Confirm.resources
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Confirm.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Voterp.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Confirmelect.resources

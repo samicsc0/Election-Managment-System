@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.confirm1 = new Election_MS.Confirm();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -144,12 +145,22 @@
             this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
+            // confirm1
+            // 
+            this.confirm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.confirm1.Location = new System.Drawing.Point(84, 40);
+            this.confirm1.Name = "confirm1";
+            this.confirm1.Size = new System.Drawing.Size(1056, 585);
+            this.confirm1.TabIndex = 25;
+            this.confirm1.Load += new System.EventHandler(this.confirm1_Load);
+            // 
             // Voterp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.confirm1);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButton2);
@@ -183,5 +194,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButton3;
+        private Confirm confirm1;
     }
 }

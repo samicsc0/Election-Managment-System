@@ -93,6 +93,7 @@
             this.textBox5.Size = new System.Drawing.Size(390, 76);
             this.textBox5.TabIndex = 14;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // iconButton2
             // 
@@ -167,6 +168,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "RegVo";
             this.Size = new System.Drawing.Size(840, 620);
+            this.Load += new System.EventHandler(this.RegVo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

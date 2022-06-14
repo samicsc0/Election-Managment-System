@@ -220,6 +220,7 @@ namespace Election_MS
                         user.govid = (string)reader[2];
                         user.region = reader[3]+"";
                         user.acctype = (int)reader[4];
+                        user.psswd = (string)reader[5];
                         return user;
                     }
                     else
@@ -302,6 +303,25 @@ namespace Election_MS
             }else
                 return null;
             
+        }
+        public int updatausr(userClass c)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            conn.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("exec upuser @fn = '" + c.fname + "',@ln = '" + c.lname + "',@govid = '" + c.govid + "',@passwd='" + c.psswd + "',@region = '" + c.region + "'", conn);
+                cmd.ExecuteNonQuery();
+                return 1;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Election_MS
 {
+    
     public partial class AAdmin : UserControl
     {
+        string up;
         public AAdmin()
         {
             InitializeComponent();
@@ -19,6 +21,20 @@ namespace Election_MS
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            userClass uc = new userClass();
+            uc.fname = textBox2.Text;
+            uc.lname = textBox3.Text;
+            uc.govid = textBox5.Text;
+            uc.region = comboBox1.GetItemText(comboBox1.SelectedItem);
+            if (textBox4.Text == "")
+                uc.psswd = up;
+            else 
+                uc.psswd = textBox4.Text;
+            int i = uc.updatausr(uc);
+            if(i == 1)
+                MessageBox.Show("Info Update Successfully!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Faild, Please try again later!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -40,6 +56,7 @@ namespace Election_MS
                 textBox2.Text = u.fname;
                 textBox3.Text = u.lname;
                 textBox5.Text = u.govid;
+                up = u.psswd;
                 for(int i = 0; i < comboBox1.Items.Count; i++)
                 {
                     if(comboBox1.Items[i].ToString() == u.region)

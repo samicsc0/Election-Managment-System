@@ -36,6 +36,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // textBox3
             // 
@@ -152,6 +154,19 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Confirm Your Vote";
             // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Barcode;
+            this.iconButton3.IconColor = System.Drawing.Color.LawnGreen;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(342, 498);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(64, 57);
+            this.iconButton3.TabIndex = 37;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
             // Confirmelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -159,6 +174,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(857, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.iconButton1);
@@ -187,5 +203,6 @@
         private TextBox textBox6;
         private PictureBox pictureBox1;
         private Label label1;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

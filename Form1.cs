@@ -11,6 +11,8 @@ namespace Election_MS
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Report report = new Report();
+            report.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

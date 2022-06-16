@@ -18,6 +18,7 @@ namespace Election_MS
 
         static string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
         public String g;
+        public int elid;
         public Voterp(String govid)
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace Election_MS
             string canid = textBox6.Text;
             SqlCommand cmd = new SqlCommand("exec voter_choice @region = '" + u.region + "',@elid = " + u.elid + "", conn);
             SqlDataReader dr = cmd.ExecuteReader();
+            elid = u.elid;
             bool x = false;
                 if (u.vt(g))
                 {
@@ -72,7 +74,7 @@ namespace Election_MS
                             continue;
                         else if ((String)dr[0] == canid)
                         {
-                            Confirmelect ce = new Confirmelect(canid);
+                            Confirmelect ce = new Confirmelect(canid,g,elid, u.region);
                             x = true;
                             ce.Show();
                             break;

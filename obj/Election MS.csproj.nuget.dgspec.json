@@ -40,9 +40,29 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "CrystalDecisions.ReportSource": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "CrystalDecisions.Shared": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "CrystalDecisions.Windows.Forms": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "FontAwesome.Sharp": {
               "target": "Package",
               "version": "[5.15.4, )"
+            },
+            "PagedList": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

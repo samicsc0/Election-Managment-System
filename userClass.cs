@@ -323,5 +323,91 @@ namespace Election_MS
                 conn.Close();
             }
         }
+
+        public string lastrowsec()
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec lskey", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return ""+reader[1];
+            }
+            else
+            {
+                return null;
+            }
+            conn.Close();
+        }
+        public bool chkcode(Guid a)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec chksec @id = '"+a+"'", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return true;
+            else
+                return false;
+        }
+        public int voted(Guid code, string cid,int elid,string vid)
+        {
+
+                SqlConnection conn = new SqlConnection(constring);
+                SqlCommand cmd = new SqlCommand("exec inscan @scode = '" + code + "',@eid =" + elid + ",@cid ='" + cid + "'", conn);
+                conn.Open();
+                int x = cmd.ExecuteNonQuery();
+            if (x > 0)
+            {
+                cmd = new SqlCommand("exec finish @govid = '" + vid + "'", conn);
+                cmd.ExecuteNonQuery();
+                return 1;
+            }
+            else
+                return 0;
+        }
+        public int cir(string c)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec cir @cid = '"+c+"'", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return 1;
+            }else
+                return 0;   
+        }
+        public void insr(string c,int a,string rgn)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec infr @cid = '"+c+"',@eid = "+a+",@region = '"+rgn+"'", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void uprep(string c,int n)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("upreport @cid = '"+c+"',@n = "+n+"", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public int numvt(string c)
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("exec cir @cid = '" + c + "'", conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return (int)reader[3];
+            }
+            else
+                return 0;
+        }
+
     }
 }

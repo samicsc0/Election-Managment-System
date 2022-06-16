@@ -7,6 +7,12 @@
     <Compile Update="Confirmelect.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GenerateID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ID.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="update.cs">
       <SubType>UserControl</SubType>
     </Compile>

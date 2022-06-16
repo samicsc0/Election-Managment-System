@@ -40,3 +40,10 @@ C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\runtimes\win\lib\n
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Confirm.resources
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Voterp.resources
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Confirmelect.resources
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.GenerateID.resources
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\CrystalDecisions.ReportSource.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\CrystalDecisions.Shared.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\CrystalDecisions.Windows.Forms.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\PagedList.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.ID.resources
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\QRCoder.dll

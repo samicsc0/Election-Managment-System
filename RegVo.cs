@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,7 +49,17 @@ namespace Election_MS
                 int check = u.regvoter(v);
                 if (check == 1)
                 {
-                    MessageBox.Show("Voter Successfully Added!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string constring = ConfigurationManager.ConnectionStrings["datab"].ConnectionString;
+                    SqlConnection conn = new SqlConnection(constring);
+                    SqlCommand cmd = new SqlCommand("exec gensec", conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    userClass a = new userClass();
+                    String key = a.lastrowsec();
+                    MessageBox.Show("Voter Successfully Added!" + " " + key.ToUpper(), "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ID id = new ID(v.fn.ToUpper(),v.ln.ToUpper(),v.govid,key.ToUpper());
+                    id.ShowDialog();
+                    conn.Close ();
                 }
                 else if (check == -1)
                 {

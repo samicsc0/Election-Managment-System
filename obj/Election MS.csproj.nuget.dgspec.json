@@ -40,6 +40,18 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "AForge": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video.DirectShow": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "CrystalDecisions.ReportSource": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -67,6 +79,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.6, )"
             }
           },
           "imports": [

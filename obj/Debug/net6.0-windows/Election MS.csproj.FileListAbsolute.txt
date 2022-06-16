@@ -47,3 +47,8 @@ C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\CrystalDecisions.W
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\PagedList.dll
 C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.ID.resources
 C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\QRCoder.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\AForge.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\AForge.Video.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
+C:\Users\pc\source\repos\Election MS\bin\Debug\net6.0-windows\zxing.dll
+C:\Users\pc\source\repos\Election MS\obj\Debug\net6.0-windows\Election_MS.Qrreader.resources

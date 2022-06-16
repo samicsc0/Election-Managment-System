@@ -42,10 +42,11 @@ namespace Election_MS
                 v.fn = textBox1.Text;
                 v.ln = textBox6.Text;
                 v.govid = textBox2.Text;
-                v.psswd = textBox5.Text;
+                //v.psswd = textBox5.Text;
                 v.elid = textBox3.Text;
                 v.region = comboBox1.GetItemText(comboBox1.SelectedItem);
                 userClass u = new userClass();
+                v.psswd = u.ComputeSha256Hash(textBox5.Text);
                 int check = u.regvoter(v);
                 if (check == 1)
                 {
@@ -56,7 +57,7 @@ namespace Election_MS
                     cmd.ExecuteNonQuery();
                     userClass a = new userClass();
                     String key = a.lastrowsec();
-                    MessageBox.Show("Voter Successfully Added!" + " " + key.ToUpper(), "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Voter Successfully Added!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ID id = new ID(v.fn.ToUpper(),v.ln.ToUpper(),v.govid,key.ToUpper());
                     id.ShowDialog();
                     conn.Close ();

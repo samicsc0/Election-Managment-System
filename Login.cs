@@ -32,7 +32,7 @@ namespace Election_MS
         {
             userClass user = new userClass();
             user.govid = this.textBox1.Text;
-            user.psswd = this.textBox2.Text;
+            user.psswd = user.ComputeSha256Hash(this.textBox2.Text);
             textBox1.Clear();
             textBox2.Clear();
             userClass dbr = user.login(user);

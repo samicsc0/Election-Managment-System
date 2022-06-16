@@ -29,7 +29,7 @@ namespace Election_MS
             if (textBox4.Text == "")
                 uc.psswd = up;
             else 
-                uc.psswd = textBox4.Text;
+                uc.psswd = uc.ComputeSha256Hash(textBox4.Text);
             int i = uc.updatausr(uc);
             if(i == 1)
                 MessageBox.Show("Info Update Successfully!", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Information);

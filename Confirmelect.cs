@@ -12,6 +12,7 @@ namespace Election_MS
 {
     public partial class Confirmelect : Form
     {
+        public static Confirmelect Self;
         public string govid;
         public string vid;
         public int elid;
@@ -22,6 +23,7 @@ namespace Election_MS
             this.vid = vid;
             this.elid = elid;
             this.rgn = rgn;
+            Self = this;
             InitializeComponent();
         }
 
@@ -106,6 +108,17 @@ namespace Election_MS
                 MessageBox.Show("Input Error! Please check your input & try again.", "NEBE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            Qrreader qr = new Qrreader();
+            qr.ShowDialog();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

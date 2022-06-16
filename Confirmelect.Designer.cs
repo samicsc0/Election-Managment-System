@@ -74,6 +74,7 @@
             this.textBox3.Size = new System.Drawing.Size(328, 76);
             this.textBox3.TabIndex = 35;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // iconButton1
             // 
@@ -158,14 +159,17 @@
             // 
             this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Barcode;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Qrcode;
             this.iconButton3.IconColor = System.Drawing.Color.LawnGreen;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 60;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.iconButton3.Location = new System.Drawing.Point(342, 498);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(64, 57);
             this.iconButton3.TabIndex = 37;
             this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // Confirmelect
             // 
@@ -183,6 +187,7 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Confirmelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmelect";
@@ -196,7 +201,6 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButton2;
-        private TextBox textBox3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private TextBox textBox1;
         private TextBox textBox2;
@@ -204,5 +208,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton3;
+        public TextBox textBox3;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using QRCoder;
+using System.Drawing.Printing;
 
 namespace Election_MS
 {
@@ -44,11 +45,23 @@ namespace Election_MS
         Bitmap bmp;
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            Graphics g = this.CreateGraphics();
-            bmp = new Bitmap(this.Size.Width,this.Size.Height,g);
-            Graphics mg = Graphics.FromImage(bmp);
-            mg.CopyFromScreen(this.Location.X,this.Location.Y,0,0,this.Size);
-            printPreviewDialog1.ShowDialog();
+           PrintDialog pd = new PrintDialog();
+           PrintDocument doc = new PrintDocument();
+            doc.PrintPage += Doc_PrintPage;
+            pd.Document = doc;
+            if(pd.ShowDialog() == DialogResult.OK)
+            {
+                doc.Print();
+            }
+
+        }
+
+        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+            e.Graphics.DrawImage(bmp, 0, 0);
+            bmp.Dispose();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

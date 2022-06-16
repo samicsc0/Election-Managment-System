@@ -23,8 +23,9 @@ namespace Election_MS
             admin.fname = textBox2.Text;
             admin.lname = textBox3.Text;
             admin.govid = textBox5.Text;
-            admin.password = textBox4.Text;
+            //admin.password = textBox4.Text;
             userClass u = new userClass();
+            admin.password = u.ComputeSha256Hash(textBox4.Text);
             bool x = textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "";
             if (x == true)
             {

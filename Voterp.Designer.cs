@@ -91,6 +91,7 @@
             this.textBox6.Size = new System.Drawing.Size(328, 76);
             this.textBox6.TabIndex = 21;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // dataGridView1
             // 

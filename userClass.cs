@@ -424,6 +424,5 @@ namespace Election_MS
                 return builder.ToString();
             }
         }
-
     }
 }

@@ -40,6 +40,10 @@ namespace Election_MS
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
             userClass u = new userClass();
             String govid = textBox1.Text;
             u = u.infoup(govid);

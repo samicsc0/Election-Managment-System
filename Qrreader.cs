@@ -35,15 +35,6 @@ namespace Election_MS
             captureDevice.Start();
             timer1.Start();
         }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            //captureDevice = new VideoCaptureDevice(filterInfoCollection[cbodevice.SelectedIndex].MonikerString);
-            //captureDevice.NewFrame += CaptureDevice_NewFrame;
-            //captureDevice.Start();
-            //timer1.Start();
-        }
-
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             pictureBox.Image = (Bitmap)eventArgs.Frame.Clone();

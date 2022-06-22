@@ -81,7 +81,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '&';
             this.textBox2.PlaceholderText = "PASSWORD";
-            this.textBox2.Size = new System.Drawing.Size(390, 76);
+            this.textBox2.Size = new System.Drawing.Size(390, 73);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.UseSystemPasswordChar = true;
